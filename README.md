@@ -36,11 +36,19 @@ echo http://$NODE_IP:$NODE_PORT
 
 ## Testing locally
 
+### Start local MySQL server
+
+```sh
+docker run -d --name mysql -e MYSQL_ROOT_PASSWORD='test' mysql:8.0.30
+```
+
 ### Start the application server
 
 ```sh
 $ python -m pip install -r app/requirements.txt
-
+$ export MYSQL_USER='root'
+$ export MYSQL_PASSWORD='test'
+$ export MYSQL_HOST='mysql'
 $ python app/app.py
     * Serving Flask app 'app' (lazy loading)
     * Environment: production
