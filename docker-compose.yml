@@ -7,3 +7,16 @@ services:
     image: "vutoff/nexo-web:${IMAGE_TAG}"
     ports:
       - "8181:8181"
+    environment:
+      MYSQL_USER: 'root'
+      MYSQL_PASSWORD: 'test'
+      MYSQL_HOST: mysql
+  mysql:
+    image: mysql:8.0.30
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 'test'
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
