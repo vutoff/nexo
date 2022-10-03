@@ -8,3 +8,4 @@ markupsafe==2.1.1; python_version >= "3.7"
 typing-extensions==4.3.0; python_version < "3.8" and python_version >= "3.7"
 werkzeug==2.2.2; python_version >= "3.7"
 zipp==3.8.1; python_version < "3.8" and python_version >= "3.7"
+mysql-connector-python==8.0.30
